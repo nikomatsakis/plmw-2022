@@ -1,0 +1,611 @@
+@import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,800,700,300,300italic,600,400italic,600italic,700italic,800italic);
+@import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+
+body {
+  font-family: "Open Sans", sans-serif;
+}
+
+h1, h2, h3 {
+  font-family: 'Yanone Kaffeesatz';
+  font-weight: normal;
+}
+.remark-code, .remark-inline-code {
+  font-family: 'Ubuntu Mono';
+}
+.remark-code {
+  font-size: 20px;
+  line-height: 150%;
+}
+.remark-slide-content {
+  font-size: 25px;
+  padding: 0em 2em 0em 2em;
+}
+.grey {
+  color: grey;
+}
+.grey a {
+  color: grey;
+}
+.small {
+  font-size: 60%;
+}
+.smaller {
+  font-size: 50%;
+}
+ul {
+  line-height: 150%;
+}
+li ul {
+  font-size: 90%;
+}
+h2 {
+  margin-bottom: -20px;
+}
+img {
+  margin-top: 1rem;
+  max-width: 100%;
+  max-height: 32rem;
+}
+.horizontal-space {
+  margin-left: 1em;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+}
+th {
+  text-align: center;
+  border-bottom: 1px solid black;
+  padding-top: .5em;
+  padding-bottom: .5em;
+}
+th:first-child {
+  text-align: left;
+}
+td {
+  text-align: center;
+}
+td:first-child {
+  text-align: left;
+}
+pre {
+  text-align: left;
+}
+td pre {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+.remark-notes-current-area {
+  font-size: 1.5em;
+}
+.remark-slide-number {
+  font-size: 0.6em;
+}
+#slide-title .remark-slide-number {
+  display: none;
+}
+.small-slide {
+  font-size: 25px;
+}
+.small-slide p {
+  -webkit-margin-before: 0.5em;
+  -webkit-margin-after: 0.5em;
+}
+
+.bugzilla-arrow {
+    position: absolute;
+    top: 180px;
+    left: 450px;
+    width: 50px;
+    transform: rotate(45deg);
+}
+
+.bugzilla1 {
+    color: #666;
+    font-size: 70px;
+    font-family: "Fira Sans", "Open Sans", "Helvetica Neue", Arial, Helvetica, sans-serif;
+}
+
+.bugzilla2 {
+    color: #000;
+    font-size: 70px;
+    font-family: "Fira Sans", "Open Sans", "Helvetica Neue", Arial, Helvetica, sans-serif;
+}
+
+
+@page {
+  size: 908px 681px;
+  margin: 0;
+}
+
+@media print {
+  .remark-slide-scaler {
+    width: 100% !important;
+    height: 100% !important;
+    transform: scale(1) !important;
+    top: 0 !important;
+    left: 0 !important;
+  }
+}
+
+.rust-means {
+  display: block;
+  position: absolute;
+  text-align: left;
+  margin-left: 3rem;
+  margin-top: -15rem;
+  color: grey;
+  font-size: 2rem;
+}
+
+.rust-means::before {
+  background-image: url("content/images/rust-logo-blk.svg");
+  background-size: 4rem 4rem;
+  display: block;
+  position: absolute;
+  width: 4rem;
+  height: 4rem;
+  content: "";
+  margin-left: -4rem;
+  margin-top: -.5rem;
+}
+
+.float-right {
+  float:right;
+}
+
+mark, .mark {
+  background-color: rgba(255,255,0,0.5);
+}
+
+.extra-spacing ul {
+  line-height: 180%;
+}
+
+.extra-spacing ul li ul{
+  line-height: 150%;
+}
+
+.hidden {
+  display: none;
+}
+
+.no-hide .hidden {
+  display: inline;
+}
+
+.black-background {
+  background-color: black;
+}
+
+.goldnordelish {
+  position: fixed;
+  bottom: 400px;
+  left: 400px;
+  background-color: yellow;
+}
+
+.caption {
+  font-size: 50%;
+}
+
+.hide {
+  opacity: 0;
+}
+
+.fadein {
+  animation-duration: 3s;
+  animation-name: fade;
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.footnote, .citation {
+    padding: 10px 20px;
+    position: absolute;
+    left: 20px;
+    bottom: 20px;
+    font-weight: 400;
+    font-size: 0.5em;
+}
+
+.p80 img {
+    width: 80%;
+}
+
+.p60 img {
+    width: 60%;
+}
+
+.p50 img {
+    width: 50%;
+}
+
+.p40 img {
+    width: 40%;
+}
+
+.p100 img {
+    width: 100%;
+    height: auto;
+}
+
+.white-text {
+    color: #FFFFFF;
+}
+
+.jslogo img {
+    position: absolute;
+    right: 50px;
+    top: 235px;
+    width: 100px;
+    height: 100px;
+}
+
+.gologo img {
+    position: absolute;
+    right: 50px;
+    top: 180px;
+    width: 150px;
+    height: 150px;
+}
+
+.zca {
+    position: absolute;
+    left: 150px;
+    top: 150px;
+    color: #FFFFFF;
+}
+
+.modern-conveniences {
+    position: absolute;
+    right: 150px;
+    top: 150px;
+    color: #FFFFFF;
+}
+
+.ownership-and-borrowing {
+    position: absolute;
+    right: 125px;
+    bottom: 240px;
+    color: #FFFFFF;
+}
+
+.craftsmanship {
+    position: absolute;
+    left: 150px;
+    bottom: 240px;
+    color: #FFFFFF;
+}
+
+.community {
+    position: absolute;
+    left: 37%;
+    top: 42%;
+    font-size: 30px;
+}
+
+.wycatsdate img {
+    position: absolute;
+    top: 135px;
+    left: 430px;
+    width: 50px;
+    transform: rotate(45deg);
+}
+
+.one-dot-oh img {
+    position: absolute;
+    bottom: 150px;
+    left: 180px;
+    width: 50px;
+    transform: rotate(90deg);
+}
+
+.line1 img {
+    position: absolute;
+    top: 120px;
+    left: 10px;
+    width: 50px;
+}
+
+.line1r img {
+    position: absolute;
+    top: 120px;
+    left: 50%;
+    width: 50px;
+    transform: translateX(-100%);
+}
+
+.line1-impl img {
+    position: absolute;
+    top: 100px;
+    left: 425px;
+    width: 50px;
+    transform: rotate(45deg);
+}
+
+.line1-generics img {
+    position: absolute;
+    top: 100px;
+    left: 575px;
+    width: 50px;
+    transform: rotate(45deg);
+}
+
+.line2 img {
+    position: absolute;
+    top: 152px;
+    left: 10px;
+    width: 50px;
+}
+
+.line2r img {
+    position: absolute;
+    top: 152px;
+    left: 50%;
+    width: 50px;
+    transform: translateX(-100%);
+}
+
+.line2-data img {
+    position: absolute;
+    top: 125px;
+    left: 675px;
+    width: 50px;
+    transform: rotate(45deg);
+}
+
+.annotate-data {
+    position: absolute;
+    top: 200px;
+    left: 600px;
+}
+
+.annotate-send {
+    position: absolute;
+    top: 200px;
+    left: 400px;
+}
+
+.line3 img {
+    position: absolute;
+    top: 183px;
+    left: 10px;
+    width: 50px;
+}
+
+.line3r img {
+    position: absolute;
+    top: 183px;
+    left: 50%;
+    width: 50px;
+    transform: translateX(-100%);
+}
+
+.line3-regalo img {
+    position: absolute;
+    top: 220px;
+    left: 220px;
+    width: 50px;
+    transform: rotate(270deg);
+}
+
+.line4 img {
+    position: absolute;
+    top: 212px;
+    left: 10px;
+    width: 50px;
+}
+
+.line5 img {
+    position: absolute;
+    top: 245px;
+    left: 10px;
+    width: 50px;
+}
+
+.line7 img {
+    position: absolute;
+    top: 300px;
+    left: 10px;
+    width: 50px;
+}
+
+.col-right {
+    position: absolute;
+    top: 110px;
+    left: 50%;
+}
+
+.me {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+}
+
+.king img {
+    position: absolute;
+    bottom: 50px;
+    left: 10px;
+}
+
+.queen img {
+    position: absolute;
+    bottom: 50px;
+    right: 80px;
+}
+
+.lover-left img {
+    height: 275px;
+    position: absolute;
+    bottom: 10px;
+    left: 125px;
+}
+
+.lover-right img {
+    height: 275px;
+    position: absolute;
+    bottom: 10px;
+    right: 125px;
+}
+
+.lover-gift-left img {
+    height: 100px;
+    position: absolute;
+    bottom: 100px;
+    left: 325px;
+}
+
+.lover-left-center img {
+    height: 275px;
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-125%);
+}
+
+.lover-gift-right img {
+    height: 100px;
+    position: absolute;
+    bottom: 100px;
+    right: 325px;
+}
+
+.lover-right-center img {
+    height: 275px;
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(25%);
+}
+
+.lover-gift-center img {
+    height: 100px;
+    position: absolute;
+    bottom: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.regalo-arrow img {
+    position: absolute;
+    top: 260px;
+    left: 170px;
+    width: 50px;
+    transform: rotate(45deg);
+}
+
+.crying_face p {
+    position: absolute;
+    right: 175px;
+    bottom: 125px;
+    font-size: 2.5em;
+}
+
+.vec-new img {
+    position: absolute;
+    top: 150px;
+    left: 150px;
+    width: 50px;
+    transform: rotate(45deg);
+}
+
+.page-center {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+}
+
+.peoplelike-tl img {
+    position: absolute;
+    top: 15%;
+    left: 0%;
+    width: 50%
+}
+
+.peoplelike-bl img {
+    position: absolute;
+    top: 50%;
+    left: 0%;
+    width: 50%
+}
+
+.peoplelike-br img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 50%
+}
+
+.peoplelike-hearts img {
+    position: absolute;
+    top: 5%;
+    left: 55%;
+    width: 35%
+}
+
+.top-left img {
+    position: absolute;
+    top: 15%;
+    left: 0%;
+    width: 700px;
+}
+
+.top-right img {
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    width: 700px;
+}
+
+.bottom-left img {
+    position: absolute;
+    top: 50%;
+    left: 0%;
+    width: 700px;
+}
+
+.bottom-right img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 700px;
+}
+
+.jlord {
+    font-family: Lora, Georgia, Baskerville, serif;
+}
+
+blockquote {
+    background: #f9f9f9;
+    border-left: 10px solid #ccc;
+    margin: 1.5em 10px;
+    padding: 0.5em 10px;
+    quotes: "\201C""\201D""\2018""\2019";
+}
+blockquote:before {
+    color: #ccc;
+    content: open-quote;
+    font-size: 4em;
+    line-height: 0.1em;
+    margin-right: 0.25em;
+    vertical-align: -0.4em;
+}
+blockquote p {
+    display: inline;
+}
+
+.group { }
