@@ -27,6 +27,9 @@ h1, h2, h3 {
 .grey a {
   color: grey;
 }
+.hugest {
+  font-size: 1000%;
+}
 .small {
   font-size: 60%;
 }
