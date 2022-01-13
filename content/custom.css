@@ -118,6 +118,9 @@ td pre {
     font-family: "Fira Sans", "Open Sans", "Helvetica Neue", Arial, Helvetica, sans-serif;
 }
 
+.right-justify {
+  text-align: end;
+}
 
 @page {
   size: 908px 681px;
@@ -237,6 +240,10 @@ mark, .mark {
 
 .p40 img {
     width: 40%;
+}
+
+.p25 img {
+  width: 25%;
 }
 
 .p100 img {
@@ -611,4 +618,6 @@ blockquote p {
     display: inline;
 }
 
-.group { }
+.vert_align_top {
+  vertical-align:top;
+}

@@ -46,3 +46,21 @@ Vague outline
 * Phase 4: 
     * Picking the right IR
 * Fin
+
+---
+
+---
+
+# Where do ideas come from?
+
+* Feedback from others (synthesizing)
+* Dropping constraints (ah-ha!)
+
+---
+
+# No spark? No problem!
+
+* As a grad student, I think this bedeviled me most
+* What do you do when you have no idea of what to do?
+
+
