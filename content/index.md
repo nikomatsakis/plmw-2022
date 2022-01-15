@@ -112,7 +112,6 @@ loop {
 }
 ```
 
-
 .small[¹ I'm forced to admit I kind of like this one best.]
 
 ---
@@ -134,11 +133,38 @@ loop {
 
 ---
 
+.page-center[.hugest[😊]]
+
+???
+
+That got me thinking...I felt like I had a pretty good idea what they meant.
+
+In Rust, you have the ability to take a pointer into the stack, and other functions can modify the values of your local variables. That's just not possible in Java.
+
+---
+
 # Step 1: Variations on Rust's type system
 
 ### Pick the right IR
 
 Can't say enough good things about [PLT Redex](https://redex.racket-lang.org/)
+
+???
+
+As it happens, I had some ideas for how to tweak the Rust type system to make it feel more natural, both in this dimension and a few others. I started playing with them.
+
+Very quickly, I realized I needed a way to make the idea concrete. I spent a while hacking
+in [PLT Redex]. 
+
+[PLT Redex]: https://redex.racket-lang.org/
+
+---
+
+# PLT Redex
+
+If you've not used it, [PLT Redex] is a fantastic tool.
+
+You get to write type rules in roughly the same state as you would in a paper, and then run them. It's very interactive and all about visualization and seeing what happens.
 
 ---
 
@@ -146,11 +172,68 @@ Can't say enough good things about [PLT Redex](https://redex.racket-lang.org/)
 
 ### Pick the right IR
 
+![Tutorial opening page](./content/images/screenshot-tutorial-open.png)
+
+???
+
+As I worked on the type rules, though, I realized that I was starting a bit from the wrong end. And so I backed up and just started writing tutorials for a programming language that didn't exist. This was very instructive. 
+
+Writing a tutorial forced me to answer questions like:
+
+* Can I introduce the concepts I need in a linear order?
+* How independent are they?
+
+---
+
+![Tutorial opening page](./content/images/screenshot-tutorial-perms.png)
+
+???
+
+I went through a lot of iterations. As I worked, I realized that a key part of
+the project was going to be the interface. I envisioned that I would have a web
+interface where you could put the cursor and get a visualization of the permissions
+and object structure.
+
+---
+
+# Shoutout: Pernos.co
+
+.center[![Pernosco](content/images/pernosco.png)]
+
+???
+
+Totally unrelated, but I was very inspired by pernos.co, this nifty debugging
+project. The idea is that you capture a trace of the code you are running and
+you are able to step back and forth through time to explore what happened.
+You can do things like click in the stdout to see the state of the program when
+that byte was written. You can also do things like click in a buffer and jump
+backwards to the point where that bufer was written, which might not be easy to find
+otherwise. Very cool, totally check it out.
+
 ---
 
 # Step 3: Incremental system of my dreams
 
-### Pick the right IR
+???
+
+At around this point, I realized it was time for me to try implementing the
+compiler. But I had a problem. I was actually doing two kinds of research in one 
+here, because I didn't just want to play with the language, I wanted to experiment
+on *how one builds a compiler*.
+
+---
+
+# Step 3: Incremental system of my dreams
+
+.center[![Yak Shave](content/images/yak-shave.gif)]
+
+???
+
+That's right, it was time for a yak shave.
+
+---
+
+# Salsa
 
 ---
 
