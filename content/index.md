@@ -235,6 +235,13 @@ That's right, it was time for a yak shave.
 
 # Salsa
 
+![Salsa-0](content/images/Salsa-0.drawio.svg)
+
+
+???
+
+The core 
+
 ---
 
 # Step 4: Implementing the compiler
