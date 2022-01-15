@@ -246,6 +246,10 @@ mark, .mark {
   width: 25%;
 }
 
+.p10 img {
+  width: 10%;
+}
+
 .p100 img {
     width: 100%;
     height: auto;
@@ -620,4 +624,36 @@ blockquote p {
 
 .vert_align_top {
   vertical-align:top;
+}
+
+.salsa-0-0 img {
+  width: 10%;
+  position: absolute;
+  bottom: 350px;
+  left: 50px;
+  transform: rotate(270deg);
+}
+
+.salsa-0-1 img {
+  width: 10%;
+  position: absolute;
+  bottom: 525px;
+  left: 250px;
+  transform: rotate(90deg);
+}
+
+.salsa-0-2 img {
+  width: 10%;
+  position: absolute;
+  bottom: 375px;
+  left: 190px;
+  transform: rotate(0deg);
+}
+
+.salsa-0-3 img {
+  width: 10%;
+  position: absolute;
+  bottom: 400px;
+  left: 400px;
+  transform: rotate(90deg);
 }

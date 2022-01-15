@@ -232,15 +232,37 @@ on *how one builds a compiler*.
 That's right, it was time for a yak shave.
 
 ---
+name: salsa-0
 
-# Salsa
+# Compilers a la Dragon Book
 
 ![Salsa-0](content/images/Salsa-0.drawio.svg)
 
+---
+template: salsa-0
 
-???
+.salsa-0-0[![Arrow](content/images/Arrow.png)]
 
-The core 
+---
+template: salsa-0
+
+.salsa-0-1[![Arrow](content/images/Arrow.png)]
+
+---
+template: salsa-0
+
+.salsa-0-2[![Arrow](content/images/Arrow.png)]
+
+---
+template: salsa-0
+
+.salsa-0-3[![Arrow](content/images/Arrow.png)]
+
+---
+
+# Compilers a la Salsa
+
+
 
 ---
 
