@@ -6,7 +6,7 @@ count: false
 
 .me[.grey[*by* **Nicholas Matsakis**]]
 .page-center[.hugest[😊]]
-.citation[`https://github.com/nikomatsakis/plmw-2022`]
+.citation[`https://github.com/nikomatsakis/plmw-2022`<br>Press `p` for the "soundtrack"!]
 
 ---
 
@@ -338,6 +338,8 @@ name: salsa-0
 
 ![Salsa-0](content/images/Salsa-0.drawio.svg)
 
+.citation[Tool to make this diagram: [draw.io](https://draw.io). It's great.]
+
 ???
 
 The traditional compiler is a "batch compiler". It proceeds in a very linear fashion.
@@ -393,8 +395,84 @@ After parsing, the compiler goes through several phases:
 
 ---
 
-# Compilers a la Salsa
+# Responsive compilers
 
+???
+
+This dragon-book style architecture is exactly how the Rust compiler was written
+initially. It's a tried and true strategy, and it works, but it's not well suited
+to a modern coding environment. In an IDE, you want to be able to give live feedback.
+You want to be able to do autocompletion. And, even in a batch compiler, you want to be
+able to compile incrementally, so you're not starting from scratch every time.
+
+---
+
+# Responsive compilers
+
+.center[.p25[
+    ![github pic of eddyb](content/images/eddyb.png)
+    ![github pic of michaelwoerister](content/images/mw.png)<br>
+    ![github pic of matthewhammer](content/images/matthewhammer.png)
+    ![github pic of matklad](content/images/matklad.png)
+]]
+
+???
+
+At some point we decided to extend the Rust compiler with incremental compilation.
+We wanted a scheme that would make it as easy to build an incremental, responsive
+compiler as it was to build a dragon-book-style one. At this point, I want to give
+a shout-out to these four people, who have tremendously impacted my thinking on this;
+most every good idea that follows came from one of them.
+
+---
+
+# Working backwards
+
+
+???
+
+Let's talk through the goal. We want something that would get you live feedback as quickly as possible. If you were just testing one function, ideally, we would just compile that function plus the things it calls, and nothing else. We can do that in the background. You can see that there is no way to do that in the traditional dragon book architecture.
+
+---
+name: working-backwards
+
+# Working backwards
+
+.p200[![Salsa-2](content/images/Salsa-2.drawio.svg)]
+
+---
+template: working-backwards
+
+.wb-0-4[![Arrow](content/images/Arrow.png)]
+
+???
+
+So what we want is to start by saying "we need the code for the `main` function".
+
+---
+template: working-backwards
+
+.wb-0-3[![Arrow](content/images/Arrow.png)]
+
+???
+
+That would in turn say "we need the optimized IR for `main`"
+
+---
+template: working-backwards
+
+.wb-0-2[![Arrow](content/images/Arrow.png)]
+
+???
+
+Which would in turn say "we have to type check `main`". At this point, if `main` calls other functions, we might ask for the 
+
+---
+template: working-backwards
+
+.wb-0-1[![Arrow](content/images/Arrow.png)]
+
+???
 
 
 ---

@@ -214,6 +214,7 @@ mark, .mark {
     bottom: 20px;
     font-weight: 400;
     font-size: 0.5em;
+    text-align:left;
 }
 
 .p80 img {
@@ -242,7 +243,10 @@ mark, .mark {
 
 .p100 img {
     width: 100%;
-    height: auto;
+}
+
+.p200 img {
+  width: 300%;
 }
 
 .white-text {
@@ -654,6 +658,30 @@ blockquote p {
   bottom: 325px;
   left: 575px;
   transform: rotate(90deg);
+}
+
+.wb-0-4 img {
+  width: 10%;
+  position: absolute;
+  bottom: 215px;
+  left: 675px;
+  transform: rotate(180deg);
+}
+
+.wb-0-3 img {
+  width: 10%;
+  position: absolute;
+  bottom: 325px;
+  left: 675px;
+  transform: rotate(180deg);
+}
+
+.wb-0-2 img {
+  width: 10%;
+  position: absolute;
+  bottom: 450px;
+  left: 675px;
+  transform: rotate(180deg);
 }
 
 .tutorial-0 img {
