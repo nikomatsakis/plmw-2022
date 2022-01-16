@@ -218,7 +218,8 @@ name:tutorial
 
 ???
 
-Without an implementation, it was hard for me.
+I realized though that I could approximate the "feeling" of how the implementation
+should work without actually building anything. 
 
 ---
 template:tutorial
@@ -229,6 +230,8 @@ template:tutorial
 template:tutorial
 
 .tutorial-1[![tutorial](content/images/Arrow.png)]
+
+[asciiflow.com](https://asciiflow.com/): best tool ever
 
 ---
 
@@ -284,7 +287,9 @@ template: hypotheses
 
 ???
 
-The biggest, and not one that I started with, was that the environment and the language were intertwined. I wanted to make a language with a strong type system, but one that felt interactive.
+The biggest, and not one that I started with, was that the environment and the language were intertwined. 
+
+I wanted to make a language with a strong type system, but where learning felt interactive.
 
 ---
 template: hypotheses
@@ -293,7 +298,9 @@ template: hypotheses
 
 ???
 
-I wanted to blend compile time and runtime. I wanted to 
+I wanted to blend compile time and runtime. I wanted every program to be runnable, and I wanted you to be able to easily see the state at each point as it ran, especially for small programs.
+
+I wanted you to start by observing runtime errors, and then add types, and see how those types prevent the runtime errors -- and I wanted the error messages from the type system to be presented *as if* they were runtime errors, so that they present counterexamples or other details. Realizing this is definitely still a work-in-progress. 
 
 ---
 template: hypotheses
@@ -302,7 +309,7 @@ template: hypotheses
 
 ???
 
-xx
+To loop back to my original motivations, I wanted Dada to *feel* like a "normal GC language". I realized along the way that the best way to manage this was to model and implement it that way, and then to show that the semantics were equivalent when I made various systems-level optimization (like removing pointers).
 
 ---
 
@@ -331,6 +338,20 @@ name: salsa-0
 
 ![Salsa-0](content/images/Salsa-0.drawio.svg)
 
+???
+
+The traditional compiler is a "batch compiler". It proceeds in a very linear fashion.
+
+(click) It starts by reading in the sources.
+
+(click) The lexer then converts those bytes into tokens which are fed into the parser.
+
+(click) The parser produces a data structure representing the program. For example, it might start with a module that has an entry for each top-level symbol. This is often called a 'symbol table'.
+
+(click) For each symbol, like a function, we have a data structure with its details.
+
+(click) Finally, to represent the body itself, we have an AST with the parsed representation of the text. This usually excludes comments and things.
+
 ---
 template: salsa-0
 
@@ -350,6 +371,25 @@ template: salsa-0
 template: salsa-0
 
 .salsa-0-3[![Arrow](content/images/Arrow.png)]
+
+---
+template: salsa-0
+
+.salsa-0-4[![Arrow](content/images/Arrow.png)]
+
+---
+
+# Compilers a la Dragon Book
+
+![Salsa-1](content/images/Salsa-1.drawio.svg)
+
+???
+
+After parsing, the compiler goes through several phases:
+
+* The type checker issues warnings and errors.
+* The optimizer transforms the AST, possibly introducing new representations.
+* The code generator creates the final executable.
 
 ---
 

@@ -648,6 +648,14 @@ blockquote p {
   transform: rotate(90deg);
 }
 
+.salsa-0-4 img {
+  width: 10%;
+  position: absolute;
+  bottom: 325px;
+  left: 575px;
+  transform: rotate(90deg);
+}
+
 .tutorial-0 img {
   width: 10%;
   position: absolute;
