@@ -30,6 +30,12 @@ h1, h2, h3 {
 .hugest {
   font-size: 1000%;
 }
+.huge {
+  font-size: 500%;
+}
+.large {
+  font-size: 250%;
+}
 .small {
   font-size: 60%;
 }
@@ -98,24 +104,8 @@ td pre {
   -webkit-margin-after: 0.5em;
 }
 
-.bugzilla-arrow {
-    position: absolute;
-    top: 180px;
-    left: 450px;
-    width: 50px;
-    transform: rotate(45deg);
-}
-
-.bugzilla1 {
-    color: #666;
-    font-size: 70px;
-    font-family: "Fira Sans", "Open Sans", "Helvetica Neue", Arial, Helvetica, sans-serif;
-}
-
-.bugzilla2 {
-    color: #000;
-    font-size: 70px;
-    font-family: "Fira Sans", "Open Sans", "Helvetica Neue", Arial, Helvetica, sans-serif;
+.left-justify{
+  text-align: left;
 }
 
 .right-justify {
@@ -656,4 +646,20 @@ blockquote p {
   bottom: 400px;
   left: 400px;
   transform: rotate(90deg);
+}
+
+.tutorial-0 img {
+  width: 10%;
+  position: absolute;
+  bottom: 350px;
+  left: 200px;
+  transform: rotate(180deg);
+}
+
+.tutorial-1 img {
+  width: 10%;
+  position: absolute;
+  bottom: 175px;
+  left: 250px;
+  transform: rotate(180deg);
 }

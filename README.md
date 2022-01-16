@@ -7,3 +7,9 @@ No matter what kind of PL you are doing, there's no better way to get a feel for
 ## Given at
 
 [PLMW 2022](https://popl22.sigplan.org/home/PLMW-2022)
+
+## Read the talk
+
+View the [slides in presenter mode](https://nikomatsakis.github.io/plmw-2022/#p1) to get a rough idea of the soundtrack.
+
+If you prefer, you can view the [raw slides without notes](https://nikomatsakis.github.io/plmw-2022/#1)
