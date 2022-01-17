@@ -704,6 +704,14 @@ blockquote p {
   transform: rotate(135deg);
 }
 
+.wb-0-7 img {
+  width: 10%;
+  position: absolute;
+  bottom: 360px;
+  left: 710px;
+  transform: rotate(135deg);
+}
+
 .tutorial-0 img {
   width: 10%;
   position: absolute;

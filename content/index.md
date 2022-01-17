@@ -613,6 +613,13 @@ If `main` calls the `helper` function, it would request just the
 data that is needed to complete the type check -- the function signature,
 for example.
 
+---
+template: working-backwards
+
+.wb-0-7[![Arrow](content/images/Arrow.png)]
+
+???
+
 Producing that would again consult the raw bytes.
 
 ---
@@ -646,11 +653,97 @@ checker doesn't need to be re-executed.
 [salsa]: https://salsa-rs.github.io/salsa/
 [salsa zulip]: https://salsa.zulipchat.com/
 
+???
+
+I spent a month or two exploring these ideas in a Rust crate called Salsa.
+Actually Salsa has existing a long time, but what I was doing was implementing
+a new system that made using it a *lot* easier.
+
 ---
 
-# Step 4: Implementing the compiler
+# Step 4: Spiking the compiler
 
-* The last month or two I've been working on implementing Dada itself in Rust.
+.center[.hugest[⚡].vert_align_top[¹]]
+
+¹ There is no emoji of a spike, so pretend this is a spike, please. 🙏🏻
+
+???
+
+Once Salsa was working, I was able to "spike" the compiler. What do I mean by
+spike? It's a term I was taught by Robert Morgan. (click). Side note that his
+book on compilers is one of the best. Sadly out of print though *cough* you may
+be able to find PDFs if you search google. 
+
+The basic idea is that you set yourself a goal, like "Hello World", and then
+implement everything you need for that to work. Anything you don't need, you can
+leave as a 'to do item' -- but when you do implement something, you implement it
+properly, in the way you want it to be architected, or at least a way that you can
+transform to what you ultimately want.
+
+--
+
+² "Building an Optimizing Compiler", by Robert Morgan. Good stuff!
+
+---
+
+# Step 5: A few notes on open source
+
+???
+
+I'm not going to give a big talk on open source here. There's a ton to say.
+
+But what I will say is that spiking is *great* for open source and for contribution. 
+The idea is that you build up the architecture of your program without filling in all
+the gaps. Then you can open issues for what remains. If people take an interest in
+your project, they have an easy place to start, and they can look at the code you've
+written so far to help them get started.
+
+---
+
+# Step 6: Making it feel real
+
+* Compiling to Wasm and hosting a playground
+    * Rust makes this (relatively) easy, see [wasm-bindgen]
+* VSCode's [LSP] is the best thing since sliced bread
+    * Great fit for a responsive, salsa-style architecture
+    * Rust crate [lsp-types] is nice, but look at its consumers for examples
+* Great error messages
+    * Rust has cool crates for this, like [ariadne], [miette], [codespan-reporting], and [annotate-snippets]
+
+[LSP]: https://microsoft.github.io/language-server-protocol/
+[ariadne]: https://crates.io/crates/ariadne
+[miette]: https://crates.io/crates/miette
+[codespan-reporting]: https://crates.io/crates/codespan-reporting
+[annotate-snippets]: https://crates.io/crates/annotate-snippets
+[lsp-types]: https://crates.io/crates/lsp-types
+[wasm-bindgen]: https://rustwasm.github.io/docs/wasm-bindgen/examples/hello-world.html
+
+???
+
+Of course, that raises the question, how do you get people interested in your project?
+Let me tell you what helps: having a tangible demo they can try out. =)
+
+There are a lot of ways to do this. Here are some of the things I would prioritize. I've included links for how to do it in Rust, though I'm sure there are good answers for many of these things in other languages.
+
+---
+
+# Bonus item: seeking inspiration
+
+.center-page[.hugest[💡]]
+
+???
+
+That about covers what I wanted to say about Dada. Before I go, I do 
+want to add one final note. I think for some of
+you, at least, the question is not so much "how do I explore my idea" as "how do
+I get an idea in the first place". 
+
+I guess everyone is different, but for me, the only thing that has ever worked is
+"play". Essentially, take somebody's work that you find inspirational, and try to
+reproduce it. Use it. Re-implement it. Scale it past the examples in their paper.
+Somewhere along the way, I think you will get a "spark" -- something that doesn't
+work as well as it could, or which you think could be done better. Try to turn that
+into a hypothesis and go from there.
 
 ---
 
@@ -665,7 +758,12 @@ Here are things I would recommend:
 * Whenever possible, share it
 * Architect your compiler in an 'IDE-friendly' way
     * It's easier than you think, if you do it up front
+* Use Rust 😈
 
 .small[¹ Including me. Seriously, these are my ideas, and they work for me, but you should trust your instincts.]
 
 ???
+
+Well, that brings me to the end of my talk. I hope you that something in this
+talk has sparked interest for you, and I hope that you are feeling inspired
+to go off and build something, whether it be a compiler or something else.
