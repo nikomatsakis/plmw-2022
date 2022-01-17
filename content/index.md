@@ -729,7 +729,7 @@ There are a lot of ways to do this. Here are some of the things I would prioriti
 
 # Bonus item: seeking inspiration
 
-.center-page[.hugest[💡]]
+.page-center[.hugest[💡]]
 
 ???
 
