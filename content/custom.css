@@ -245,10 +245,6 @@ mark, .mark {
     width: 100%;
 }
 
-.p200 img {
-  width: 300%;
-}
-
 .white-text {
     color: #FFFFFF;
 }
@@ -660,27 +656,51 @@ blockquote p {
   transform: rotate(90deg);
 }
 
-.wb-0-4 img {
+.wb-0-1 img {
   width: 10%;
   position: absolute;
-  bottom: 215px;
-  left: 675px;
-  transform: rotate(180deg);
-}
-
-.wb-0-3 img {
-  width: 10%;
-  position: absolute;
-  bottom: 325px;
-  left: 675px;
-  transform: rotate(180deg);
+  bottom: 480px;
+  left: 125px;
+  transform: rotate(00deg);
 }
 
 .wb-0-2 img {
   width: 10%;
   position: absolute;
-  bottom: 450px;
-  left: 675px;
+  bottom: 400px;
+  left: 125px;
+  transform: rotate(0deg);
+}
+
+.wb-0-3 img {
+  width: 10%;
+  position: absolute;
+  bottom: 320px;
+  left: 125px;
+  transform: rotate(0deg);
+}
+
+.wb-0-4 img {
+  width: 10%;
+  position: absolute;
+  bottom: 320px;
+  left: 125px;
+  transform: rotate(90deg);
+}
+
+.wb-0-5 img {
+  width: 10%;
+  position: absolute;
+  bottom: 300px;
+  left: 165px;
+  transform: rotate(45deg);
+}
+
+.wb-0-6 img {
+  width: 10%;
+  position: absolute;
+  bottom: 320px;
+  left: 625px;
   transform: rotate(180deg);
 }
 

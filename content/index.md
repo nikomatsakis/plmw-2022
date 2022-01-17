@@ -8,6 +8,13 @@ count: false
 .page-center[.hugest[😊]]
 .citation[`https://github.com/nikomatsakis/plmw-2022`<br>Press `p` for the "soundtrack"!]
 
+???
+
+Hi! My name is Nicholas Matsakis.
+
+Thanks to the PLMW folks for having me to talk to you today,
+and thanks to you for listening.
+
 ---
 
 # Me
@@ -16,6 +23,16 @@ count: false
 
 * Co-lead of the Rust language design team
 * Senior Principal Engineer at AWS
+
+???
+
+Let me tell you a little bit about myself. My primary
+claim to fame is that I've been heavily involved in the design
+of Rust. I've been working on it since 2011, so for over a decade
+at this point. I'm the co-lead of the Rust language design team
+and heavily in the architecture and design of its compiler
+and other things. I also joined AWS about a year ago as a 
+Senior Principal Engineer, where my main duty is to work on Rust.
 
 ---
 
@@ -30,11 +47,31 @@ count: false
 .small[¹ "You... went to MIT in 1974?" -- a friend, upon seeing this picture]<br>
 .small[² Since acquired by IBM #humblebrag]
 
+???
+
+Before joining AWS, I did a few other things, but my entire
+professional career has been spent building compilers and languages.
+I credit that all to Saman Amarasinghe, a professor at MIT:
+I took his course on compilers and just fell in love. I've never looked
+back.
+
 ---
 
 # My goal(s) with this talk
 
-* Encourage you to build languages
+* Encourage you to build languages and compilers
+
+???
+
+My purpose here is to encourage you to build languages
+and compilers too, at least if that's what you want to do.
+
+(click)
+
+But I'm also here for another reason: I want you to enjoy it.
+What do I mean by that?
+
+
 --
 
 * Encourage you to **enjoy it**
@@ -45,6 +82,19 @@ count: false
 
 * I'm having the most fun I've ever had.
 * I want to share the way I'm working now.
+
+???
+
+I'm really having a lot of fun these days.
+I've found ways to work that feel really good.
+I want to spread the news.
+
+(click)
+
+I want to emphasize that I am not trying to tell you how
+to develop your project, and especially not what technologies
+to use. But I do hope that something in what I'm sharing
+will be useful to you and shape the way you work.
 
 --
 * Will it work for you? I don't know!
@@ -61,9 +111,21 @@ count: false
 
 ???
 
-* Saw a therapist in PhD days, mostly we talked about me feeling ineffective
-* Same issues have haunted me since
-* Only in the last year do I feel I've started to make progress on accepting myself
+The fact is, I wasn't always having such a good time.
+I've always struggled with feeling ineffective, inadequate, like
+an imposter. I think a lot of people do, though we don't always
+talk about it.
+
+Honestly, it's only in the last year or so that I've started
+to make progress on accepting myself and really feeling
+my own worth as a human being, independent from the work that I
+produce.
+
+(click)
+
+So, if you've struggled with those feelings, let me just
+say, you're not alone. I can't tell you that it will get
+better, but I can say that it *can* get better.
 
 --
 
@@ -78,18 +140,46 @@ count: false
 
 Quick demo on the [Dada playground](https://dada-lang.org/playground/)
 
+???
+
+Anyway, enough mushy stuff. I'm going to be talking to you today
+about a new programming language that I've been playing with
+lately, that I call Dada, after the art movement. Dada is an experimental
+language meant to combine the benefits of Rust with a feeling closer to 
+Java or JavaScript. Unlike Rust, it doesn't aim to cover low-level, 
+embedded applications. Really, Dada is an attempt to capture a hypothesis
+I have, that people learn best by interactivity. But I'm getting a bit ahead
+of myself.
+
+In any case, my goal here today isn't really to talk about *Dada*, but rather
+the process I've been using to develop it, and its compiler architecture, which
+I'm (so far) fairly satisfied with.
+
+Let me start by clicking on this playground link, just to give you a very brief
+feel for Dada.
+
 ---
 
 # Two basic lessons
 
 After programming for 35 years (😱) here are two things I've learned:
 
---
-
 * Loops, loops, and more loops
---
-
 * Pick the right IR (Intermediate Representation)
+
+???
+
+Right, so there are two main lessons I want to impart. They derive from
+programming but I kind of think they apply more broadly.
+
+First, it's often said that programs spend most of their time in loops -- the same is true
+of humans, so it's important to think about your loops.
+
+Second, when you're programming, it's amazing what a difference the choice of IR
+can make. I've often found that when something seems too hard, it's because I need
+to introduce a primary transformation into some form that makes the problem
+easier. Well, likewise, as we do research, we should think about the medium
+and tools we are using and make sure they're a good match for our goals.
 
 ---
 
@@ -100,13 +190,15 @@ After programming for 35 years (😱) here are two things I've learned:
 
 .small[¹ See what I did there?]
 
+???
+
+OK, so let's talk about loops. The fact is that research
+involves a ton of iteration. You have an initial idea, and
+you refine it over and over again.
+
 ---
 
 # The basic cycle
-
-* Scientific method
-* Military calls it the [OODA loop](https://en.wikipedia.org/wiki/OODA_loop)
-* Startup people call it the "build-measure-learn loop"¹
 
 ```rust
 let mut hypothesis = make_hypothesis();
@@ -116,14 +208,38 @@ loop {
 }
 ```
 
+* Scientific method
+* Military calls it the [OODA loop](https://en.wikipedia.org/wiki/OODA_loop)
+* Startup people call it the "build-measure-learn loop"¹
+
 .small[¹ I'm forced to admit I kind of like this one best.]
 
----
+???
 
-# Core idea
+This is not, in fact, unique to academia. It's an idea that comes
+up everywhere. My favorite expression, oddly, is from a book
+about how to run a startup, which called it the "build-measure-learn loop".
 
-* Get yourself to something tangible as quickly as you can
-* Remember what you're trying to achieve; the route will change
+The reason I love this so much is that it starts with *build*.
+All too often, when I was going around this loop, I spent a lot of time
+in my head. It made sense, I thought: I can imagine and think things through
+much faster than I can build. And that's very true!
+
+And yet, I cannot tell you how much more quickly research and evolution
+happens once you can get things to some kind of prototype. It doesn't even have to be
+a very good prototype! 
+
+*Anything* you can do to get the research into a state
+where people can play with it and imagine what it will be like to use it
+will immediately spark tons of ideas for how to do it better.
+
+There's a reason I started this talk with the Dada playground. I really, really
+wanted to get Dada to a state where I can interactively play with the ideas,
+so that's the very first thing I tried to build. I literally had the playground
+up and going before I had the `+` operator working.
+
+But even so, the playground is fairly late in the evolution of Dada. So let me
+start there.
 
 ---
 
@@ -252,7 +368,6 @@ otherwise. Very cool, totally check it out.
 ---
 
 # Step 3: Feedback
-
 
 .left-justify[.large[
     𝄆¹
@@ -428,7 +543,6 @@ most every good idea that follows came from one of them.
 
 # Working backwards
 
-
 ???
 
 Let's talk through the goal. We want something that would get you live feedback as quickly as possible. If you were just testing one function, ideally, we would just compile that function plus the things it calls, and nothing else. We can do that in the background. You can see that there is no way to do that in the traditional dragon book architecture.
@@ -438,34 +552,7 @@ name: working-backwards
 
 # Working backwards
 
-.p200[![Salsa-2](content/images/Salsa-2.drawio.svg)]
-
----
-template: working-backwards
-
-.wb-0-4[![Arrow](content/images/Arrow.png)]
-
-???
-
-So what we want is to start by saying "we need the code for the `main` function".
-
----
-template: working-backwards
-
-.wb-0-3[![Arrow](content/images/Arrow.png)]
-
-???
-
-That would in turn say "we need the optimized IR for `main`"
-
----
-template: working-backwards
-
-.wb-0-2[![Arrow](content/images/Arrow.png)]
-
-???
-
-Which would in turn say "we have to type check `main`". At this point, if `main` calls other functions, we might ask for the 
+![Salsa-2](content/images/Salsa-2.drawio.svg)
 
 ---
 template: working-backwards
@@ -474,10 +561,109 @@ template: working-backwards
 
 ???
 
+So what we want is to start by saying "we need the code for the `main` function".
+
+---
+template: working-backwards
+
+.wb-0-2[![Arrow](content/images/Arrow.png)]
+
+???
+
+That would in turn say "we need to type check `main`"
+
+---
+template: working-backwards
+
+.wb-0-3[![Arrow](content/images/Arrow.png)]
+
+???
+
+Which would in turn say "we have to parse `main`".
+
+---
+template: working-backwards
+
+.wb-0-4[![Arrow](content/images/Arrow.png)]
+
+???
+
+The parser would read the raw bytes...
+
+---
+template: working-backwards
+
+.wb-0-5[![Arrow](content/images/Arrow.png)]
+
+???
+
+...and use them to allocate the AST for `main`.
+Unlike before, though, we wouldn't create the AST for the other functions,
+at least not yet.
+
+---
+template: working-backwards
+
+.wb-0-6[![Arrow](content/images/Arrow.png)]
+
+???
+
+The type checker would return the function body.
+If `main` calls the `helper` function, it would request just the
+data that is needed to complete the type check -- the function signature,
+for example.
+
+---
+
+# Incremental compilation
+
+![Salsa-2](content/images/Salsa-2.drawio.svg)
+
+???
+
+In addition to doing the minimum work to produce a result,
+this setup is also interesting because it tells you when work
+needs to be recomputed.
+
+For example, we can see that the parser needs to re-execute 
+when the input changes. But if the parser produces the same
+AST as it did before -- e.g., if they only added a comment --
+then its *output* hasn't changed, which means that the type 
+checker doesn't need to be re-executed.
+
+---
+
+# Compilers a la Salsa
+
+.center[.p25[![Salsa Logo](content/images/salsa-logo.png)]]
+
+* [Salsa]: a Rust package for building "working backwards" compilers
+* You can [read about Salsa here][salsa] and the [new system here](https://hackmd.io/@nikomatsakis/BJ32_WZOF).
+* If this interests you, join the [Salsa Zulip] and ping me (`nikomatsakis`)!
+
+[salsa]: https://salsa-rs.github.io/salsa/
+[salsa zulip]: https://salsa.zulipchat.com/
 
 ---
 
 # Step 4: Implementing the compiler
 
+* The last month or two I've been working on implementing Dada itself in Rust.
+
 ---
 
+# Conclusions
+
+Here are things I would recommend:
+
+* [Don't trust anyone over 30](https://en.wikipedia.org/wiki/Jack_Weinberg) ✌️¹
+* Build yourself a prototype
+    * Something you can do in a few months
+    * If that's not possible, cut corners until it is
+* Whenever possible, share it
+* Architect your compiler in an 'IDE-friendly' way
+    * It's easier than you think, if you do it up front
+
+.small[¹ Including me. Seriously, these are my ideas, and they work for me, but you should trust your instincts.]
+
+???
