@@ -59,46 +59,17 @@ back.
 
 # My goal(s) with this talk
 
-* Encourage you to build languages and compilers
-
-???
-
-My purpose here is to encourage you to build languages
-and compilers too, at least if that's what you want to do.
-
-(click)
-
-But I'm also here for another reason: I want you to enjoy it.
-What do I mean by that?
-
-
---
-
-* Encourage you to **enjoy it**
-
----
-
-# Enjoying it
-
-* I'm having the most fun I've ever had.
+* Encourage you to build languages and compilers.
 * I want to share the way I'm working now.
 
 ???
 
-I'm really having a lot of fun these days.
+Over the years of working on languages and compilers, I've tried
+quite a few approaches and learned a lot about what works for me
+and what doesn't. My goal with this talk is to share some of that.
+The fact is, I'm having the most fun I ever had.
 I've found ways to work that feel really good.
 I want to spread the news.
-
-(click)
-
-I want to emphasize that I am not trying to tell you how
-to develop your project, and especially not what technologies
-to use. But I do hope that something in what I'm sharing
-will be useful to you and shape the way you work.
-
---
-* Will it work for you? I don't know!
-    * But hopefully you'll find something useful.
 
 ---
 
