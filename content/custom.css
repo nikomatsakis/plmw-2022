@@ -675,16 +675,16 @@ blockquote p {
 .wb-0-3 img {
   width: 10%;
   position: absolute;
-  bottom: 320px;
-  left: 125px;
-  transform: rotate(0deg);
+  bottom: 365px;
+  left: 165px;
+  transform: rotate(45deg);
 }
 
 .wb-0-4 img {
   width: 10%;
   position: absolute;
-  bottom: 320px;
-  left: 125px;
+  bottom: 370px;
+  left: 86px;
   transform: rotate(90deg);
 }
 
@@ -699,9 +699,9 @@ blockquote p {
 .wb-0-6 img {
   width: 10%;
   position: absolute;
-  bottom: 320px;
-  left: 625px;
-  transform: rotate(180deg);
+  bottom: 360px;
+  left: 650px;
+  transform: rotate(135deg);
 }
 
 .tutorial-0 img {

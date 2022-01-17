@@ -613,6 +613,8 @@ If `main` calls the `helper` function, it would request just the
 data that is needed to complete the type check -- the function signature,
 for example.
 
+Producing that would again consult the raw bytes.
+
 ---
 
 # Incremental compilation
