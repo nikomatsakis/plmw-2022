@@ -754,7 +754,7 @@ Here are things I would recommend:
 * [Don't trust anyone over 30](https://en.wikipedia.org/wiki/Jack_Weinberg) ✌️¹
 * Build yourself a prototype
     * Something you can do in a few months
-    * If that's not possible, cut corners until it is
+    * If that's not possible, change your "IR"
 * Whenever possible, share it
 * Architect your compiler in an 'IDE-friendly' way
     * It's easier than you think, if you do it up front
