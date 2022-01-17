@@ -781,5 +781,8 @@ Here are things I would recommend:
 ???
 
 Well, that brings me to the end of my talk. I hope you that something in this
-talk has sparked interest for you, and I hope that you are feeling inspired
-to go off and build something, whether it be a compiler or something else.
+talk has sparked interest for you. I want to say, if you're feeling inspired,
+I advocate this strategy. Yehuda Katz taught it to me and I think it's a good one.
+Set yourself an initial goal that you think can be accomplished in 3 months or so and
+then just focus on that goal for a while. If you can't find a way to do the work you want
+done in 3 months, then maybe change your IR -- maybe write the tutorial for the thing first, before you try and build it. Either way, get something done, and then take it to others for feedback. Good luck!
