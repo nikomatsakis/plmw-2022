@@ -727,7 +727,7 @@ There are a lot of ways to do this. Here are some of the things I would prioriti
 
 ---
 
-# Bonus item: seeking inspiration
+# Bonus item 1: seeking inspiration
 
 .page-center[.hugest[💡]]
 
@@ -744,6 +744,22 @@ reproduce it. Use it. Re-implement it. Scale it past the examples in their paper
 Somewhere along the way, I think you will get a "spark" -- something that doesn't
 work as well as it could, or which you think could be done better. Try to turn that
 into a hypothesis and go from there.
+
+---
+
+# Bonus item 2: Cool compiler books
+
+My favorite books:
+
+* ["Types and Programming Languages", by Benjamin Pierce](https://www.cis.upenn.edu/~bcpierce/tapl/)
+* ["A Retargetable C Compiler", by Christopher Fraser and David Hanson](https://drh.github.io/lcc/)
+* "Building an Optimizing Compiler", by Robert Morgan (out of print)
+
+???
+
+I won't dwell on it, but people always ask about good books to read to
+learn about compilers. These are the three that I personally have learned
+the most from. You can come back and find my slides online if you want to see them.
 
 ---
 
