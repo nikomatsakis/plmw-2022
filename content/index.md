@@ -239,32 +239,6 @@ I thought I had a pretty good idea what they meant. It's kind of like how people
 
 ### Pick the right IR
 
-Can't say enough good things about [PLT Redex](https://redex.racket-lang.org/)
-
-???
-
-As it happens, I had some ideas for how to tweak the Rust type system to make it feel more natural, both in this dimension and a few others. So I started playing with them.
-
-At first I was just thinking things through in my head and sketching a bit on paper, but I realized quickly I needed a way to make the ideas more concrete. I couldn't keep enough of the state in my head.
-
----
-
-# Diversion: reading the Programmer's Brain
-
-.center[.p60[![programmers-brain](content/images/programmers-brain.png)]]
-
-[read more at Felienne Hermans' page](https://www.felienne.com/book)
-
-???
-
-I've recently read the Programmer's Brain and quite enjoyed it. The book pretty clearly explains what's going on here -- your brain can only hold about 6 "things" in its working memory at a time, so having notation and tools lets you 'export' some of that. 
-
-Similarly, the more compact a notation is -- the more precisely it captures the thing you're trying to work with -- the more you are able to lump a bunch of stuff into 1 "thing". Basically why *abstraction* is so effective at scaling programs up.
-
----
-
-# PLT Redex ftw
-
 For me, the best tool for sketching type systems is [PLT Redex]:
 
 * Write your type rules roughly as you would in a paper.
@@ -274,7 +248,25 @@ For me, the best tool for sketching type systems is [PLT Redex]:
 
 ???
 
-Once I realized I needed a tool, I started using PLT Redex. It's a great way to sketch out rules and play with them. I made a lot of progress that way, but after a while, I realized that I had skipped a step.
+As it happens, I had some ideas for how to tweak the Rust type system to make it feel more natural, both in this dimension and a few others. So I started playing with them. 
+
+When it comes time to play with type rules, one of the first questions is how to do it. I always find that just writing rules on paper doesn't scale. It's hard to keep everything in my head. 
+
+My tool of choice is PLT Redex.  It's a great way to sketch out rules and play with them. I made a lot of progress that way, but after a while, I realized that I had skipped a step.
+
+---
+
+# An aside: reading the Programmer's Brain
+
+.center[.p60[![programmers-brain](content/images/programmers-brain.png)]]
+
+[read more at Felienne Hermans' page](https://www.felienne.com/book)
+
+???
+
+I've recently read the Programmer's Brain and quite enjoyed it. It's a book about how people learn to program. The book pretty clearly explains what's going on here -- your brain can only hold about 6 "things" in its working memory at a time, so having notation and tools lets you 'export' some of that. 
+
+Similarly, the more compact a notation is -- the more precisely it captures the thing you're trying to work with -- the more you are able to lump a bunch of stuff into 1 "thing". Basically why *abstraction* is so effective at scaling programs up.
 
 ---
 
