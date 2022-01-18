@@ -641,19 +641,11 @@ a new system that made using it a *lot* easier.
 ???
 
 Once Salsa was working, I was able to "spike" the compiler. What do I mean by
-spike? It's a term I was taught by Robert Morgan. (click). Side note that his
-book on compilers is one of the best. Sadly out of print though *cough* you may
-be able to find PDFs if you search google. 
-
-The basic idea is that you set yourself a goal, like "Hello World", and then
+spike? The basic idea is that you set yourself a goal, like "Hello World", and then
 implement everything you need for that to work. Anything you don't need, you can
 leave as a 'to do item' -- but when you do implement something, you implement it
 properly, in the way you want it to be architected, or at least a way that you can
 transform to what you ultimately want.
-
---
-
-² "Building an Optimizing Compiler", by Robert Morgan. Good stuff!
 
 ---
 
