@@ -100,7 +100,7 @@ better, but I can say that it *can* get better.
 
 --
 
-.center[.huge[🫂]]
+.center[.huge[🤗]]
 
 ---
 
@@ -729,7 +729,7 @@ Here are things I would recommend:
 * Whenever possible, share it
 * Architect your compiler in an 'IDE-friendly' way
     * It's easier than you think, if you do it up front
-* Use Rust 😈
+* Use Rust 😀
 
 .small[¹ Including me. Seriously, these are my ideas, and they work for me, but you should trust your instincts.]
 
