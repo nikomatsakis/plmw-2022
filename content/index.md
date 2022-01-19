@@ -489,9 +489,10 @@ able to compile incrementally, so you're not starting from scratch every time.
 
 .center[.p25[
     ![github pic of eddyb](content/images/eddyb.png)
-    ![github pic of michaelwoerister](content/images/mw.png)<br>
-    ![github pic of matthewhammer](content/images/matthewhammer.png)
+    ![github pic of michaelwoerister](content/images/mw.png)
+    ![github pic of matthewhammer](content/images/matthewhammer.png)<br>
     ![github pic of matklad](content/images/matklad.png)
+    ![github pic of matklad](content/images/wycats.png)
 ]]
 
 ???
@@ -499,7 +500,7 @@ able to compile incrementally, so you're not starting from scratch every time.
 At some point we decided to extend the Rust compiler with incremental compilation.
 We wanted a scheme that would make it as easy to build an incremental, responsive
 compiler as it was to build a dragon-book-style one. At this point, I want to give
-a shout-out to these four people, who have tremendously impacted my thinking on this;
+a shout-out to these five people, who have tremendously impacted my thinking on this;
 most every good idea that follows came from one of them.
 
 ---
