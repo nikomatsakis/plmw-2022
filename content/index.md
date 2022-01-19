@@ -181,7 +181,7 @@ loop {
 
 * Scientific method
 * Military calls it the [OODA loop](https://en.wikipedia.org/wiki/OODA_loop)
-* Startup people call it the "build-measure-learn loop"¹
+* [The "lean" startup people](http://theleanstartup.com/principles) call it the "build-measure-learn loop"¹
 
 .small[¹ I'm forced to admit I kind of like this one best.]
 
